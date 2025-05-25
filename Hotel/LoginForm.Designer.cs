@@ -36,7 +36,6 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.btnreg = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -122,22 +121,12 @@
             this.btnreg.UseVisualStyleBackColor = true;
             this.btnreg.Click += new System.EventHandler(this.btnreg_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(738, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnreg);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnLogin);
@@ -164,6 +153,5 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnreg;
-        private System.Windows.Forms.Button button1;
     }
 }
