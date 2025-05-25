@@ -7,7 +7,7 @@ public static class DatabaseHelper
 {
     private static string connectionString = "server=localhost;user=root;password=;database=hotel_db1";
 
-    // تنفيذ أوامر SELECT وترجيع DataTable مع دعم الباراميترات
+    // تنفيذ أوامر SELECT وترجيع ataTable مع دعم الباراميترات
     public static DataTable ExecuteSelectCommand(string query, List<MySqlParameter> parameters = null)
     {
         using (MySqlConnection con = new MySqlConnection(connectionString))
