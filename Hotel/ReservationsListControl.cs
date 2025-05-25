@@ -21,11 +21,16 @@ namespace Hotel
             dtpCheckOut.ValueChanged += dtpCheckOut_ValueChanged;
 
             btnClear.Click += btnClear_Click;
+
+            // إزالة الاشتراك أولاً لمنع استدعاء مرتين
+            btnDelete.Click -= btnDelete_Click;
             btnDelete.Click += btnDelete_Click;
+
             btnAdd.Click += btnAdd_Click;
             btnUpdate.Click += btnUpdate_Click;
 
-            dataGridViewReservations.CellClick += dataGridViewReservations_CellContentClick;
+            // تصحيح الربط إلى CellContentClick وليس CellClick
+            dataGridViewReservations.CellContentClick += dataGridViewReservations_CellContentClick;
         }
 
         private void ReservationsListControl_Load(object sender, EventArgs e)
@@ -41,15 +46,43 @@ namespace Hotel
             comboStatus.Items.AddRange(new string[] { "تم التأكيد", "قيد الانتظار", "أُلغيت" });
         }
 
+        public ReservationsListControl()
+        {
+            InitializeComponent();
+            this.Load += ReservationsListControl_Load;
+
+            txtClientName.TextChanged += txtClientName_TextChanged;
+            txtRoomNumber.TextChanged += txtRoomNumber_TextChanged;
+            txtGuests.TextChanged += txtGuests_TextChanged;
+            comboStatus.SelectedIndexChanged += comboStatus_SelectedIndexChanged;
+            dtpCheckIn.ValueChanged += dtpCheckIn_ValueChanged;
+            dtpCheckOut.ValueChanged += dtpCheckOut_ValueChanged;
+
+            btnClear.Click += btnClear_Click;
+
+            // إزالة الاشتراك أولاً لمنع استدعاء مرتين
+            btnDelete.Click -= btnDelete_Click;
+            btnDelete.Click += btnDelete_Click;
+
+            btnAdd.Click += btnAdd_Click;
+            btnUpdate.Click += btnUpdate_Click;
+
+            // تصحيح الربط إلى CellContentClick وليس CellClick
+            dataGridViewReservations.CellContentClick += dataGridViewReservations_CellContentClick;
+        }
+
         private void LoadReservationsData()
         {
             string query = @"
-                SELECT reservation_id AS ID, client_name AS 'Client Name', room_number AS 'Room Number',
-                       check_in AS 'Check-in Date', check_out AS 'Check-out Date', 
-                       guests AS 'Guests', status AS 'Status'
-                FROM reservations";
+        SELECT reservation_id AS ID, client_name AS 'Client Name', room_number AS 'Room Number',
+               check_in AS 'Check-in Date', check_out AS 'Check-out Date', 
+               guests AS 'Guests', status AS 'Status'
+        FROM reservations";
 
             DataTable dt = DatabaseHelper.ExecuteSelectCommand(query);
+
+            // إعادة تعيين DataSource إلى null قبل التعيين لتحديث كامل
+            dataGridViewReservations.DataSource = null;
             dataGridViewReservations.DataSource = dt;
 
             if (dataGridViewReservations.Columns.Contains("ID"))

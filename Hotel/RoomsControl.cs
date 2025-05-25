@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-// لا تنسَ إضافة المرجع للمكتبة iTextSharp (Install-Package iTextSharp)
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
@@ -20,16 +18,17 @@ namespace Hotel
         public RoomsControl()
         {
             InitializeComponent();
-            this.Load += RoomsControl_Load; // ربط الحدث
+            this.Load += RoomsControl_Load;
             LoadRoomsData();
         }
 
         private void RoomsControl_Load(object sender, EventArgs e)
         {
-            // ملء ComboBox الحالة إذا لم يكن مملوء مسبقًا
-            comboStatus.Items.Add("متاحة");
-            comboStatus.Items.Add("مشغولة");
-            comboStatus.Items.Add("تحت الصيانة");
+            
+
+            comboroomType.Items.Add("مفردة");
+            comboroomType.Items.Add("مزدوجة");
+            comboroomType.Items.Add("جناح");
         }
 
         private void LoadRoomsData()
@@ -41,7 +40,7 @@ namespace Hotel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtRoomNumber.Text) || string.IsNullOrWhiteSpace(txtRoomType.Text) ||
+            if (string.IsNullOrWhiteSpace(txtRoomNumber.Text) || comboroomType.SelectedIndex == -1 ||
                 string.IsNullOrWhiteSpace(txtBeds.Text) || string.IsNullOrWhiteSpace(txtPrice.Text) || comboStatus.SelectedIndex == -1)
             {
                 MessageBox.Show("يرجى ملء جميع الحقول", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -52,7 +51,7 @@ namespace Hotel
             var parameters = new List<MySql.Data.MySqlClient.MySqlParameter>()
             {
                 DatabaseHelper.CreateParameter("@room_number", txtRoomNumber.Text),
-                DatabaseHelper.CreateParameter("@room_type", txtRoomType.Text),
+                DatabaseHelper.CreateParameter("@room_type", comboroomType.SelectedItem.ToString()),
                 DatabaseHelper.CreateParameter("@beds", int.Parse(txtBeds.Text)),
                 DatabaseHelper.CreateParameter("@price", decimal.Parse(txtPrice.Text)),
                 DatabaseHelper.CreateParameter("@status", comboStatus.SelectedItem.ToString())
@@ -73,46 +72,25 @@ namespace Hotel
 
         private void dgvRooms_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridViewRooms.ScrollBars = ScrollBars.Vertical; // للسحب عمودي فقط
-                                                                // أو
-            dataGridViewRooms.ScrollBars = ScrollBars.Both; // للسحب عمودي وأفقي
+            dataGridViewRooms.ScrollBars = ScrollBars.Both;
             dataGridViewRooms.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
             dataGridViewRooms.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridViewRooms.Rows[e.RowIndex];
                 txtRoomNumber.Text = row.Cells["Room Number"].Value.ToString();
-                txtRoomType.Text = row.Cells["Type"].Value.ToString();
+                comboroomType.SelectedItem = row.Cells["Type"].Value.ToString();
                 txtBeds.Text = row.Cells["Beds"].Value.ToString();
                 txtPrice.Text = row.Cells["Price"].Value.ToString();
                 comboStatus.SelectedItem = row.Cells["Status"].Value.ToString();
             }
         }
 
-        private void txtRoomNumber_TextChanged(object sender, EventArgs e)
-        {
-            // فارغ حسب طلبك
-        }
-
-        private void txtRoomType_TextChanged(object sender, EventArgs e)
-        {
-            // فارغ حسب طلبك
-        }
-
-        private void txtBeds_TextChanged(object sender, EventArgs e)
-        {
-            // فارغ حسب طلبك
-        }
-
-        private void txtPrice_TextChanged(object sender, EventArgs e)
-        {
-            // فارغ حسب طلبك
-        }
-
-        private void comboStatus_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // فارغ حسب طلبك
-        }
+        private void txtRoomNumber_TextChanged(object sender, EventArgs e) { }
+        private void txtRoomType_TextChanged(object sender, EventArgs e) { }
+        private void txtBeds_TextChanged(object sender, EventArgs e) { }
+        private void txtPrice_TextChanged(object sender, EventArgs e) { }
+        private void comboStatus_SelectedIndexChanged(object sender, EventArgs e) { }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -128,7 +106,6 @@ namespace Hotel
             }
 
             int roomId = Convert.ToInt32(dataGridViewRooms.CurrentRow.Cells["Room ID"].Value);
-
             var confirmResult = MessageBox.Show("هل أنت متأكد من حذف هذه الغرفة؟", "تأكيد الحذف", MessageBoxButtons.YesNo);
             if (confirmResult == DialogResult.Yes)
             {
@@ -160,7 +137,7 @@ namespace Hotel
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtRoomNumber.Text) || string.IsNullOrWhiteSpace(txtRoomType.Text) ||
+            if (string.IsNullOrWhiteSpace(txtRoomNumber.Text) || comboroomType.SelectedIndex == -1 ||
                 string.IsNullOrWhiteSpace(txtBeds.Text) || string.IsNullOrWhiteSpace(txtPrice.Text) || comboStatus.SelectedIndex == -1)
             {
                 MessageBox.Show("يرجى ملء جميع الحقول", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -172,7 +149,7 @@ namespace Hotel
             var parameters = new List<MySql.Data.MySqlClient.MySqlParameter>()
             {
                 DatabaseHelper.CreateParameter("@room_number", txtRoomNumber.Text),
-                DatabaseHelper.CreateParameter("@room_type", txtRoomType.Text),
+                DatabaseHelper.CreateParameter("@room_type", comboroomType.SelectedItem.ToString()),
                 DatabaseHelper.CreateParameter("@beds", int.Parse(txtBeds.Text)),
                 DatabaseHelper.CreateParameter("@price", decimal.Parse(txtPrice.Text)),
                 DatabaseHelper.CreateParameter("@status", comboStatus.SelectedItem.ToString()),
@@ -195,16 +172,13 @@ namespace Hotel
         private void ClearInputs()
         {
             txtRoomNumber.Clear();
-            txtRoomType.Clear();
+            comboroomType.SelectedIndex = -1;
             txtBeds.Clear();
             txtPrice.Clear();
             comboStatus.SelectedIndex = -1;
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void label5_Click(object sender, EventArgs e) { }
 
         private void btnExportPDF_Click(object sender, EventArgs e)
         {
@@ -220,24 +194,17 @@ namespace Hotel
                 {
                     if (sfd.ShowDialog() == DialogResult.OK)
                     {
-                        // إنشاء مستند PDF جديد
                         Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 20f, 20f);
                         PdfWriter.GetInstance(pdfDoc, new FileStream(sfd.FileName, FileMode.Create));
                         pdfDoc.Open();
 
-                        // إضافة عنوان
-
-                        // Paragraph title = new Paragraph("تقرير الغرف", FontFactory.GetFont("Arial", 16, Font.BOLD));
                         Paragraph title = new Paragraph("تقرير الغرف", FontFactory.GetFont("Arial", 16, iTextSharp.text.Font.BOLD));
-
                         title.Alignment = Element.ALIGN_CENTER;
                         pdfDoc.Add(title);
                         pdfDoc.Add(new Chunk("\n"));
 
-                        // إنشاء جدول PDF بنفس عدد أعمدة DataGridView
                         PdfPTable pdfTable = new PdfPTable(dataGridViewRooms.Columns.Count);
 
-                        // إضافة رؤوس الأعمدة
                         foreach (DataGridViewColumn column in dataGridViewRooms.Columns)
                         {
                             PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
@@ -245,7 +212,6 @@ namespace Hotel
                             pdfTable.AddCell(cell);
                         }
 
-                        // إضافة بيانات الصفوف
                         foreach (DataGridViewRow row in dataGridViewRooms.Rows)
                         {
                             if (!row.IsNewRow)
@@ -268,6 +234,11 @@ namespace Hotel
             {
                 MessageBox.Show("حدث خطأ أثناء تصدير التقرير: " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void comboroomType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // فارغ حسب طلبك
         }
     }
 }

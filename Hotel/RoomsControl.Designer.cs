@@ -35,7 +35,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtRoomNumber = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.txtRoomType = new System.Windows.Forms.TextBox();
             this.txtBeds = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.comboStatus = new System.Windows.Forms.ComboBox();
@@ -47,6 +46,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnExportPDF = new System.Windows.Forms.Button();
+            this.comboroomType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRooms)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,14 +104,6 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // txtRoomType
-            // 
-            this.txtRoomType.Location = new System.Drawing.Point(677, 140);
-            this.txtRoomType.Name = "txtRoomType";
-            this.txtRoomType.Size = new System.Drawing.Size(175, 27);
-            this.txtRoomType.TabIndex = 6;
-            this.txtRoomType.TextChanged += new System.EventHandler(this.txtRoomType_TextChanged);
             // 
             // txtBeds
             // 
@@ -220,11 +212,21 @@
             this.btnExportPDF.UseVisualStyleBackColor = true;
             this.btnExportPDF.Click += new System.EventHandler(this.btnExportPDF_Click);
             // 
+            // comboroomType
+            // 
+            this.comboroomType.FormattingEnabled = true;
+            this.comboroomType.Location = new System.Drawing.Point(677, 145);
+            this.comboroomType.Name = "comboroomType";
+            this.comboroomType.Size = new System.Drawing.Size(175, 27);
+            this.comboroomType.TabIndex = 22;
+            this.comboroomType.SelectedIndexChanged += new System.EventHandler(this.comboroomType_SelectedIndexChanged);
+            // 
             // RoomsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
+            this.Controls.Add(this.comboroomType);
             this.Controls.Add(this.btnExportPDF);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
@@ -236,7 +238,6 @@
             this.Controls.Add(this.comboStatus);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtBeds);
-            this.Controls.Add(this.txtRoomType);
             this.Controls.Add(this.txtRoomNumber);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnClear);
@@ -259,7 +260,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox txtRoomNumber;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.TextBox txtRoomType;
         private System.Windows.Forms.TextBox txtBeds;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.ComboBox comboStatus;
@@ -271,5 +271,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnExportPDF;
+        private System.Windows.Forms.ComboBox comboroomType;
     }
 }
