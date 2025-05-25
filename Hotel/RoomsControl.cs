@@ -24,7 +24,9 @@ namespace Hotel
 
         private void RoomsControl_Load(object sender, EventArgs e)
         {
-            
+            comboroomType.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            comboroomType.Items.Clear();
 
             comboroomType.Items.Add("مفردة");
             comboroomType.Items.Add("مزدوجة");
@@ -239,6 +241,11 @@ namespace Hotel
         private void comboroomType_SelectedIndexChanged(object sender, EventArgs e)
         {
             // فارغ حسب طلبك
+        }
+
+        private void comboroomType_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

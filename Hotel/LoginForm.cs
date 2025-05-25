@@ -49,8 +49,32 @@ namespace Hotel
             string usernameOrEmail = txtUsername.Text.Trim();
             string password = txtPassword.Text;
 
-            // التحقق من بيانات الأدمن
+            if (string.IsNullOrEmpty(usernameOrEmail) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("يرجى إدخال اسم المستخدم أو البريد الإلكتروني وكلمة المرور.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // التحقق من بيانات الأدمن الثابتة
             if ((usernameOrEmail == "admin" || usernameOrEmail == "admin@gmail.com") && password == "admin")
+            {
+                this.Hide();
+                Form1 main = new Form1();
+                main.Show();
+                return;
+            }
+
+            // التحقق من قاعدة البيانات
+            string query = "SELECT * FROM users WHERE (username = @user OR email = @user) AND password = @pass";
+            var parameters = new List<MySqlParameter>
+            {
+                DatabaseHelper.CreateParameter("@user", usernameOrEmail),
+                DatabaseHelper.CreateParameter("@pass", password)
+            };
+
+            DataTable result = DatabaseHelper.ExecuteSelectCommand(query, parameters);
+
+            if (result.Rows.Count > 0)
             {
                 this.Hide();
                 Form1 main = new Form1();
@@ -58,32 +82,20 @@ namespace Hotel
             }
             else
             {
-                // التحقق من قاعدة البيانات
-                string query = "SELECT * FROM users WHERE (username = @user OR email = @user) AND password = @pass";
-                var parameters = new List<MySqlParameter>
-                {
-                    DatabaseHelper.CreateParameter("@user", usernameOrEmail),
-                    DatabaseHelper.CreateParameter("@pass", password)
-                };
-
-                DataTable result = DatabaseHelper.ExecuteSelectCommand(query, parameters);
-
-                if (result.Rows.Count > 0)
-                {
-                    this.Hide();
-                    Form1 main = new Form1();
-                    main.Show();
-                }
-                else
-                {
-                    MessageBox.Show("اسم المستخدم أو كلمة المرور غير صحيحة", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("اسم المستخدم أو كلمة المرور غير صحيحة", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
             // لا شيء ضروري هنا حاليًا
+        }
+
+        private void btnreg_Click(object sender, EventArgs e)
+        {
+            // فتح نافذة إنشاء حساب جديدة
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.ShowDialog();
         }
     }
 }

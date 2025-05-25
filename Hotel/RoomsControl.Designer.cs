@@ -215,11 +215,11 @@
             // comboroomType
             // 
             this.comboroomType.FormattingEnabled = true;
-            this.comboroomType.Location = new System.Drawing.Point(677, 145);
+            this.comboroomType.Location = new System.Drawing.Point(677, 148);
             this.comboroomType.Name = "comboroomType";
             this.comboroomType.Size = new System.Drawing.Size(175, 27);
             this.comboroomType.TabIndex = 22;
-            this.comboroomType.SelectedIndexChanged += new System.EventHandler(this.comboroomType_SelectedIndexChanged);
+            this.comboroomType.SelectedIndexChanged += new System.EventHandler(this.comboroomType_SelectedIndexChanged_1);
             // 
             // RoomsControl
             // 

@@ -35,6 +35,7 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnreg = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -91,11 +92,11 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(218, 232);
+            this.btnLogin.Location = new System.Drawing.Point(355, 235);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(222, 49);
+            this.btnLogin.Size = new System.Drawing.Size(156, 49);
             this.btnLogin.TabIndex = 5;
-            this.btnLogin.Text = "تسجيل";
+            this.btnLogin.Text = "تسجيل الدخول";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -110,12 +111,23 @@
             this.label8.TabIndex = 21;
             this.label8.Text = "أهلًا بك مرة أخرى";
             // 
+            // btnreg
+            // 
+            this.btnreg.Location = new System.Drawing.Point(168, 235);
+            this.btnreg.Name = "btnreg";
+            this.btnreg.Size = new System.Drawing.Size(146, 49);
+            this.btnreg.TabIndex = 22;
+            this.btnreg.Text = "إنشاء حساب";
+            this.btnreg.UseVisualStyleBackColor = true;
+            this.btnreg.Click += new System.EventHandler(this.btnreg_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnreg);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnExit);
@@ -140,5 +152,6 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnreg;
     }
 }

@@ -22,16 +22,15 @@ namespace Hotel
 
             btnClear.Click += btnClear_Click;
 
-            // إزالة الاشتراك أولاً لمنع استدعاء مرتين
             btnDelete.Click -= btnDelete_Click;
             btnDelete.Click += btnDelete_Click;
 
             btnAdd.Click += btnAdd_Click;
             btnUpdate.Click += btnUpdate_Click;
 
-            // تصحيح الربط إلى CellContentClick وليس CellClick
             dataGridViewReservations.CellContentClick += dataGridViewReservations_CellContentClick;
         }
+
 
         private void ReservationsListControl_Load(object sender, EventArgs e)
         {
@@ -46,30 +45,7 @@ namespace Hotel
             comboStatus.Items.AddRange(new string[] { "تم التأكيد", "قيد الانتظار", "أُلغيت" });
         }
 
-        public ReservationsListControl()
-        {
-            InitializeComponent();
-            this.Load += ReservationsListControl_Load;
-
-            txtClientName.TextChanged += txtClientName_TextChanged;
-            txtRoomNumber.TextChanged += txtRoomNumber_TextChanged;
-            txtGuests.TextChanged += txtGuests_TextChanged;
-            comboStatus.SelectedIndexChanged += comboStatus_SelectedIndexChanged;
-            dtpCheckIn.ValueChanged += dtpCheckIn_ValueChanged;
-            dtpCheckOut.ValueChanged += dtpCheckOut_ValueChanged;
-
-            btnClear.Click += btnClear_Click;
-
-            // إزالة الاشتراك أولاً لمنع استدعاء مرتين
-            btnDelete.Click -= btnDelete_Click;
-            btnDelete.Click += btnDelete_Click;
-
-            btnAdd.Click += btnAdd_Click;
-            btnUpdate.Click += btnUpdate_Click;
-
-            // تصحيح الربط إلى CellContentClick وليس CellClick
-            dataGridViewReservations.CellContentClick += dataGridViewReservations_CellContentClick;
-        }
+      
 
         private void LoadReservationsData()
         {
@@ -157,6 +133,8 @@ namespace Hotel
                     MessageBox.Show("تم حذف الحجز بنجاح", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearInputs();
                     LoadReservationsData();
+                    dataGridViewReservations.ClearSelection();
+
                 }
                 else
                 {
