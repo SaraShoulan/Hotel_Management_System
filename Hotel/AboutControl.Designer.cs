@@ -36,12 +36,13 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(285, 60);
+            this.label1.Location = new System.Drawing.Point(294, 69);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(121, 49);
+            this.label1.Size = new System.Drawing.Size(104, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "من نحن؟";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
