@@ -47,19 +47,40 @@ namespace Hotel
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             // مثال: تحميل واجهة الحجز مثلاً
-          //  var reservations = new ReservationsListControl();
-          //  LoadUserControl(reservations);
+            //  var reservations = new ReservationsListControl();
+            //  LoadUserControl(reservations);
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
             // مثال: تحميل الواجهة الرئيسية
-            var dashboard = new DashboardControl();
-            LoadUserControl(dashboard);
+           // var dashboard = new DashboardControl();
+        //    LoadUserControl(dashboard);
         }
 
         private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
         {
 
         }

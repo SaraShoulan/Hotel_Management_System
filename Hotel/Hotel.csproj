@@ -119,6 +119,12 @@
     <Compile Include="ClientsControl.Designer.cs">
       <DependentUpon>ClientsControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="connect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="connect.Designer.cs">
+      <DependentUpon>connect.cs</DependentUpon>
+    </Compile>
     <Compile Include="DashboardControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClientsControl.resx">
       <DependentUpon>ClientsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="connect.resx">
+      <DependentUpon>connect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashboardControl.resx">
       <DependentUpon>DashboardControl.cs</DependentUpon>

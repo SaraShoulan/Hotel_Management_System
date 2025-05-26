@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Hotel
 {
-    public partial class AboutControl : UserControl
+    public partial class connect : UserControl
     {
-        public AboutControl()
+        public connect()
         {
             InitializeComponent();
-        }
-
-        private void AboutControl_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

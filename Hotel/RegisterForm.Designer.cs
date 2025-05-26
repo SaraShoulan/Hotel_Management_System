@@ -91,7 +91,7 @@
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(111, 38);
             this.btnRegister.TabIndex = 5;
-            this.btnRegister.Text = "button1";
+            this.btnRegister.Text = "إنشاء";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
@@ -101,36 +101,37 @@
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(112, 38);
             this.btnLogin.TabIndex = 6;
-            this.btnLogin.Text = "button2";
+            this.btnLogin.Text = "دخول ";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(493, 53);
+            this.label1.Location = new System.Drawing.Point(507, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 19);
+            this.label1.Size = new System.Drawing.Size(116, 19);
             this.label1.TabIndex = 7;
-            this.label1.Text = "label1";
+            this.label1.Text = "اسم المستخدم";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(493, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 19);
+            this.label2.Size = new System.Drawing.Size(44, 19);
             this.label2.TabIndex = 8;
-            this.label2.Text = "label2";
+            this.label2.Text = "البريد";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(493, 163);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 19);
+            this.label3.Size = new System.Drawing.Size(80, 19);
             this.label3.TabIndex = 9;
-            this.label3.Text = "label3";
+            this.label3.Text = "كلمة السر";
             // 
             // linkLabel1
             // 
@@ -145,18 +146,18 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(493, 219);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 19);
+            this.label4.Size = new System.Drawing.Size(123, 19);
             this.label4.TabIndex = 11;
-            this.label4.Text = "label4";
+            this.label4.Text = "تأكيد كلمة المرور";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(493, 261);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 19);
+            this.label5.Size = new System.Drawing.Size(67, 19);
             this.label5.TabIndex = 12;
-            this.label5.Text = "label5";
+            this.label5.Text = "الصلاحية";
             // 
             // btnExit
             // 
@@ -164,7 +165,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(151, 34);
             this.btnExit.TabIndex = 13;
-            this.btnExit.Text = "button1";
+            this.btnExit.Text = "مسح";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -172,6 +173,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label5);

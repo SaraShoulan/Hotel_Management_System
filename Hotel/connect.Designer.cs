@@ -1,6 +1,6 @@
 ﻿namespace Hotel
 {
-    partial class AboutControl
+    partial class connect
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutControl));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(connect));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -36,34 +36,34 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(285, 60);
+            this.label1.Location = new System.Drawing.Point(382, 141);
             this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(121, 49);
+            this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
-            this.label1.Text = "من نحن؟";
+            this.label1.Text = "تواصل بنا";
             // 
             // label2
             // 
+            this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(193, 144);
+            this.label2.Location = new System.Drawing.Point(29, 225);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label2.Size = new System.Drawing.Size(305, 209);
+            this.label2.Size = new System.Drawing.Size(838, 247);
             this.label2.TabIndex = 1;
             this.label2.Text = resources.GetString("label2.Text");
             // 
-            // AboutControl
+            // connect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "AboutControl";
-            this.Size = new System.Drawing.Size(691, 498);
-            this.Load += new System.EventHandler(this.AboutControl_Load);
+            this.Name = "connect";
+            this.Size = new System.Drawing.Size(928, 721);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

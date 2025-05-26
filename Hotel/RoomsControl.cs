@@ -31,6 +31,10 @@ namespace Hotel
             comboroomType.Items.Add("مفردة");
             comboroomType.Items.Add("مزدوجة");
             comboroomType.Items.Add("جناح");
+
+            comboStatus.Items.Add("محجوزة");
+            comboStatus.Items.Add("متاح");
+
         }
 
         private void LoadRoomsData()
