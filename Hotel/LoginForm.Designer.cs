@@ -42,27 +42,30 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(441, 123);
+            this.label1.Location = new System.Drawing.Point(294, 84);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 19);
+            this.label1.Size = new System.Drawing.Size(119, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "اسم المستخدم او البريد";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(218, 123);
+            this.txtUsername.Location = new System.Drawing.Point(145, 84);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(217, 27);
+            this.txtUsername.Size = new System.Drawing.Size(146, 20);
             this.txtUsername.TabIndex = 1;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(218, 174);
+            this.txtPassword.Location = new System.Drawing.Point(145, 119);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(217, 27);
+            this.txtPassword.Size = new System.Drawing.Size(146, 20);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
@@ -71,9 +74,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(441, 177);
+            this.label2.Location = new System.Drawing.Point(294, 121);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 19);
+            this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "كلمة السر";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -82,9 +86,10 @@
             // 
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnExit.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnExit.Location = new System.Drawing.Point(218, 302);
+            this.btnExit.Location = new System.Drawing.Point(145, 231);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(222, 51);
+            this.btnExit.Size = new System.Drawing.Size(230, 35);
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "خروج";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -92,9 +97,11 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(363, 235);
+            this.btnLogin.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(281, 161);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(141, 49);
+            this.btnLogin.Size = new System.Drawing.Size(94, 34);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "تسجيل الدخول";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -105,17 +112,20 @@
             this.label9.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label9.Font = new System.Drawing.Font("Trebuchet MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(237, 30);
+            this.label9.Location = new System.Drawing.Point(153, 22);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(198, 42);
+            this.label9.Size = new System.Drawing.Size(150, 29);
             this.label9.TabIndex = 21;
             this.label9.Text = "أهلًا بك مرة أخرى";
             // 
             // btnreg
             // 
-            this.btnreg.Location = new System.Drawing.Point(168, 235);
+            this.btnreg.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreg.Location = new System.Drawing.Point(117, 161);
+            this.btnreg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnreg.Name = "btnreg";
-            this.btnreg.Size = new System.Drawing.Size(146, 49);
+            this.btnreg.Size = new System.Drawing.Size(97, 34);
             this.btnreg.TabIndex = 22;
             this.btnreg.Text = "إنشاء حساب";
             this.btnreg.UseVisualStyleBackColor = true;
@@ -123,10 +133,10 @@
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 308);
             this.Controls.Add(this.btnreg);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnLogin);
@@ -135,6 +145,7 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
             this.Load += new System.EventHandler(this.LoginForm_Load);
