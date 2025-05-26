@@ -55,17 +55,17 @@ namespace Hotel
                 return;
             }
 
-            // التحقق من بيانات الأدمن الثابتة
+            // التحقق من بيانات الأدمن الثابتة (اختياري، لكن يفضل استخدام قاعدة البيانات دائماً)
             if ((usernameOrEmail == "admin" || usernameOrEmail == "admin@gmail.com") && password == "admin")
             {
                 this.Hide();
-                Form1 main = new Form1();
-                main.Show();
+                DashboardControl adminDashboard = new DashboardControl();
+                adminDashboard.Show();  // تصحيح هنا: استدعاء Show على الكائن
                 return;
             }
 
-            // التحقق من قاعدة البيانات
-            string query = "SELECT * FROM users WHERE (username = @user OR email = @user) AND password = @pass";
+            // التحقق من قاعدة البيانات مع جلب الدور (role)
+            string query = "SELECT role FROM users WHERE (username = @user OR email = @user) AND password = @pass";
             var parameters = new List<MySqlParameter>
             {
                 DatabaseHelper.CreateParameter("@user", usernameOrEmail),
@@ -76,9 +76,20 @@ namespace Hotel
 
             if (result.Rows.Count > 0)
             {
+                string role = result.Rows[0]["role"].ToString();
+
                 this.Hide();
-                Form1 main = new Form1();
-                main.Show();
+
+                if (role == "admin")
+                {
+                    DashboardControl adminDashboard = new DashboardControl();
+                    adminDashboard.Show();
+                }
+                else
+                {
+                    HomeUserControl home = new HomeUserControl();
+                    home.Show();
+                }
             }
             else
             {
