@@ -107,6 +107,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AboutControl.Designer.cs">
+      <DependentUpon>AboutControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     <Compile Include="UsersControl.Designer.cs">
       <DependentUpon>UsersControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AboutControl.resx">
+      <DependentUpon>AboutControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientsControl.resx">
       <DependentUpon>ClientsControl.cs</DependentUpon>
     </EmbeddedResource>

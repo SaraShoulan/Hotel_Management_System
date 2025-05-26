@@ -55,16 +55,16 @@ namespace Hotel
                 return;
             }
 
-            // التحقق من بيانات الأدمن الثابتة (اختياري، لكن يفضل استخدام قاعدة البيانات دائماً)
+            // التحقق من بيانات الأدمن الثابتة (اختياري)
             if ((usernameOrEmail == "admin" || usernameOrEmail == "admin@gmail.com") && password == "admin")
             {
                 this.Hide();
-                DashboardControl adminDashboard = new DashboardControl();
-                adminDashboard.Show();  // تصحيح هنا: استدعاء Show على الكائن
+                Form1 form1 = new Form1();
+                form1.Show();
                 return;
             }
 
-            // التحقق من قاعدة البيانات مع جلب الدور (role)
+            // التحقق من قاعدة البيانات مع جلب الدور
             string query = "SELECT role FROM users WHERE (username = @user OR email = @user) AND password = @pass";
             var parameters = new List<MySqlParameter>
             {
@@ -78,17 +78,25 @@ namespace Hotel
             {
                 string role = result.Rows[0]["role"].ToString();
 
-                this.Hide();
-
                 if (role == "admin")
                 {
-                    DashboardControl adminDashboard = new DashboardControl();
-                    adminDashboard.Show();
+                    this.Hide();
+                    Form1 form1 = new Form1();
+                    form1.Show();
+                    return;
+                }
+                else if (role == "receptionist")
+                {
+                    this.Hide();
+                    UserControl controlToLoad = new ReservationsListControl();
+                    MainForm mainForm = new MainForm(controlToLoad);
+                    mainForm.Show();
                 }
                 else
                 {
-                    HomeUserControl home = new HomeUserControl();
-                    home.Show();
+                    MessageBox.Show("الدور غير معروف. يرجى مراجعة المسؤول.", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Show(); // إعادة الواجهة في حال وجود دور غير معروف
+                    return;
                 }
             }
             else

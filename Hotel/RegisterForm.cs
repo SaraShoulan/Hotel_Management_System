@@ -11,10 +11,12 @@ namespace Hotel
         public RegisterForm()
         {
             InitializeComponent();
-            // تعيين القيم الافتراضية للدور
-            cmbRole.Items.Add("admin");
+            // لا تضف خيار admin في ComboBox، فقط receptionist
+            cmbRole.Items.Clear();
             cmbRole.Items.Add("receptionist");
-            cmbRole.SelectedIndex = 1; // الافتراضي "receptionist"
+            cmbRole.SelectedIndex = 0; // الافتراضي "receptionist"
+            // إذا تريد تخفيه نهائياً، يمكن أيضاً تعطيل الـ ComboBox:
+            cmbRole.Enabled = false;
         }
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
@@ -49,12 +51,12 @@ namespace Hotel
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Text;
             string confirmPassword = txtConfirmPassword.Text;
-            string role = cmbRole.SelectedItem?.ToString();
+            // تعيين الدور تلقائياً (لا تعتمد على الـ ComboBox)
+            string role = "receptionist";
 
             // التحقق من صحة البيانات
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(email) ||
-                string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword) ||
-                string.IsNullOrEmpty(role))
+                string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
             {
                 MessageBox.Show("يرجى ملء جميع الحقول.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -140,6 +142,11 @@ namespace Hotel
             {
                 return false;
             }
+        }
+
+        private void RegisterForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
