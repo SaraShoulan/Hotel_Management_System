@@ -64,7 +64,7 @@
             // btnBookNow
             // 
             this.btnBookNow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnBookNow.Location = new System.Drawing.Point(375, 287);
+            this.btnBookNow.Location = new System.Drawing.Point(367, 283);
             this.btnBookNow.Name = "btnBookNow";
             this.btnBookNow.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnBookNow.Size = new System.Drawing.Size(153, 65);
@@ -104,7 +104,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Location = new System.Drawing.Point(564, 178);
+            this.label2.Location = new System.Drawing.Point(569, 182);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(305, 154);
