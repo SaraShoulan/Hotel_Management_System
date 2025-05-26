@@ -34,7 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnreg = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -92,24 +92,24 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(355, 235);
+            this.btnLogin.Location = new System.Drawing.Point(365, 235);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(156, 49);
+            this.btnLogin.Size = new System.Drawing.Size(141, 49);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "تسجيل الدخول";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // label8
+            // label9
             // 
-            this.label8.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label8.Font = new System.Drawing.Font("Trebuchet MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(237, 9);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(198, 42);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "أهلًا بك مرة أخرى";
+            this.label9.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label9.Font = new System.Drawing.Font("Trebuchet MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(237, 30);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(198, 42);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "أهلًا بك مرة أخرى";
             // 
             // btnreg
             // 
@@ -128,7 +128,7 @@
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnreg);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label2);
@@ -151,7 +151,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnreg;
     }
 }

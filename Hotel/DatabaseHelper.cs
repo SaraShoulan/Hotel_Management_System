@@ -39,7 +39,7 @@ public static class DatabaseHelper
         }
     }
 
-    // تنفيذ استعلام يُرجع قيمة واحدة (مثل SELECT COUNT(*) أو LAST_INSERT_ID()) مع الباراميترات
+    // تنفيذ استعلام يُرجع قيمة واحدة  SELECT COUNT(*) أو LAST_INSERT_ID()) مع الباراميترات
     public static object ExecuteScalar(string query, List<MySqlParameter> parameters = null)
     {
         using (MySqlConnection con = new MySqlConnection(connectionString))

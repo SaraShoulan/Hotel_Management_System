@@ -64,7 +64,7 @@
             // btnBookNow
             // 
             this.btnBookNow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnBookNow.Location = new System.Drawing.Point(367, 283);
+            this.btnBookNow.Location = new System.Drawing.Point(356, 258);
             this.btnBookNow.Name = "btnBookNow";
             this.btnBookNow.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnBookNow.Size = new System.Drawing.Size(153, 65);
@@ -77,7 +77,7 @@
             // 
             this.lblDescription.BackColor = System.Drawing.Color.White;
             this.lblDescription.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDescription.Location = new System.Drawing.Point(199, 439);
+            this.lblDescription.Location = new System.Drawing.Point(199, 434);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblDescription.Size = new System.Drawing.Size(500, 89);
@@ -91,7 +91,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(24, 151);
+            this.label1.Location = new System.Drawing.Point(24, 144);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(212, 230);
@@ -104,7 +104,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Location = new System.Drawing.Point(569, 182);
+            this.label2.Location = new System.Drawing.Point(559, 191);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(305, 154);
