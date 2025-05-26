@@ -95,7 +95,7 @@ namespace Hotel
                 else
                 {
                     MessageBox.Show("الدور غير معروف. يرجى مراجعة المسؤول.", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.Show(); // إعادة الواجهة في حال وجود دور غير معروف
+                    this.Show(); // عادة الواجهة في حال وجود دور غير معروف
                     return;
                 }
             }
