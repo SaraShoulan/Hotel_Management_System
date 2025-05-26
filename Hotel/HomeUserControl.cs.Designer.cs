@@ -53,7 +53,7 @@
             this.lblWelcome.BackColor = System.Drawing.Color.White;
             this.lblWelcome.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblWelcome.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(276, 56);
+            this.lblWelcome.Location = new System.Drawing.Point(271, 19);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblWelcome.Size = new System.Drawing.Size(339, 50);
